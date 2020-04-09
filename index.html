@@ -158,6 +158,137 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用Hexo博客遇到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">使用Hexo博客遇到的问题</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-04-09T06:03:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题汇总："><a href="#问题汇总：" class="headerlink" title="问题汇总："></a>问题汇总：</h2><p>刚开始使用博客的时候，总是出现问题，由于我经验不多也不深，使用的也比较少，所以我只总结我使用过程中遇到的问题。</p>
+<hr>
+<h2 id="1-用Hexo和GitHub搭建博客时hexo-d命令报错问题："><a href="#1-用Hexo和GitHub搭建博客时hexo-d命令报错问题：" class="headerlink" title="1. 用Hexo和GitHub搭建博客时hexo d命令报错问题："></a>1. 用Hexo和GitHub搭建博客时hexo d命令报错问题：</h2><p>刚刚开始使用的时候，使用 <code>hexo d</code> 部署到github时，出现了错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FATAL bash: &#x2F;dev&#x2F;tty: No such device or address</span><br><span class="line">error: failed to execute prompt script (exit code 1)</span><br><span class="line">fatal: could not read Username for &#39;https:&#x2F;&#x2F;github.com&#39;: Invalid argument</span><br><span class="line">Error: bash: &#x2F;dev&#x2F;tty: No such device or address</span><br><span class="line">error: failed to execute prompt script (exit code 1)</span><br><span class="line">fatal: could not read Username for &#39;https:&#x2F;&#x2F;github.com&#39;: Invalid argument</span><br></pre></td></tr></table></figure>
+<p>后来看了一篇文章：<a href="https://blog.csdn.net/Greenovia/article/details/60576985" target="_blank" rel="noopener">解决用Hexo和GitHub搭建博客时hexo d命令报错问题</a></p>
+<p>发现是 <code>_config.yml</code> 中的git仓库链接设置的是 <code>ssh</code> 连接，而我没用给git账户增加 <code>ssh key</code> 才造成的问题。</p>
+<h3 id="有两种解决方法："><a href="#有两种解决方法：" class="headerlink" title="有两种解决方法："></a>有两种解决方法：</h3><h3 id="①第一种（也是我使用的一种）："><a href="#①第一种（也是我使用的一种）：" class="headerlink" title="①第一种（也是我使用的一种）："></a>①第一种（也是我使用的一种）：</h3><p>改为https协议</p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo1.png" alt="heox1"></p>
+<p>复制之后在 <code>_config.yml</code> 文件中修改 <code>deploy</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: https:&#x2F;&#x2F;github.com&#x2F;Mtouyao&#x2F;mtouyao.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+
+<p>上传的时候需要填写github的用户名和密码，按照它的要求填写就可以顺利上传了。</p>
+<h3 id="②第二种方法（使用ssh密钥）："><a href="#②第二种方法（使用ssh密钥）：" class="headerlink" title="②第二种方法（使用ssh密钥）："></a>②第二种方法（使用ssh密钥）：</h3><p>要在电脑上生成公钥，在命令行中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C mtouyao@hotmail.com</span><br></pre></td></tr></table></figure>
+
+<p>邮箱就写你的邮箱，出现的步骤都可以使用回车跳过，这样就生成了公钥。</p>
+<p>然后在 <code>_config.yml</code> 文件中修改 <code>deploy</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: git@github.com:Mtouyao&#x2F;mtouyao.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+
+<p>这里注意，<code>repo</code> 中填写的是SSH协议的链接。</p>
+<p>改完之后打开电脑中的 <code>id_rsa.pub</code> 文件将公钥复制下来，路径是：<code>C/Users/Administrator/.ssh/id_rsa</code></p>
+<p>进入你的githab账户设置，在 <code>ssh and GPG keys</code> 中点击 <code>New SSH key</code> ：</p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo2.png" alt="hexo2"></p>
+<p>我这里空的是因为我使用的是 <code>https</code> 协议，所以没有设置 <code>ssh</code> 公钥。</p>
+<p>把刚刚复制下来的公钥粘贴到key中，<code>title</code> 随便你怎么写：</p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo3.png" alt="hexo3"></p>
+<p>接下来检查一下 ssh key 是否正确，在git bash中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>出现这行语句就算成功了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi wispyoureyes! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>最后部署网站：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean    &#x2F;&#x2F; 清除缓存文件</span><br><span class="line">$ hexo g    &#x2F;&#x2F; 生成静态文件</span><br><span class="line">$ hexo d    &#x2F;&#x2F; 部署到仓库</span><br></pre></td></tr></table></figure>
+<p>这样就上传好了！</p>
+<hr>
+<h2 id="2-报错：TypeError-Cannot-read-property-‘utcOffset’-of-null解决方法："><a href="#2-报错：TypeError-Cannot-read-property-‘utcOffset’-of-null解决方法：" class="headerlink" title="2. 报错：TypeError: Cannot read property ‘utcOffset’ of null解决方法："></a>2. 报错：TypeError: Cannot read property ‘utcOffset’ of null解决方法：</h2><p>写完文章保存之后，运行 <code>hexo s</code> 使用本地查看时发现总是报错：”TypeError: Cannot read property ‘utcOffset’ of null”</p>
+<p>然后才发现是因为改动了 <code>_config.yml</code> 中的时区才导致出错</p>
+<p>我的解决方法就是把 <code>_config.yml</code> 中的 <code>timezone</code> 改为 <code>&#39;Asia/Shanghai&#39;</code> 就好了。</p>
+<hr>
+<h2 id="3-使用-hexo-d-的时候出现：ERROR-Deployer-not-found-git。"><a href="#3-使用-hexo-d-的时候出现：ERROR-Deployer-not-found-git。" class="headerlink" title="3. 使用 hexo d 的时候出现：ERROR Deployer not found: git。"></a>3. 使用 hexo d 的时候出现：ERROR Deployer not found: git。</h2><p>这是因为没有安装 <code>hexo-deployer-git</code> 插件</p>
+<p>解决方法:</p>
+<p>先把 <code>_config.yml</code> 中 <code>deploy</code> 的 <code>type</code>改为: git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br></pre></td></tr></table></figure>
+
+<p>然后在 <code>blog</code> 目录下使用 <code>git bash</code> 输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>再使用 <code>hexo d</code> 就可以推送了。</p>
+<hr>
+<h2 id="4-Hexo博客的文章插入图片："><a href="#4-Hexo博客的文章插入图片：" class="headerlink" title="4. Hexo博客的文章插入图片："></a>4. Hexo博客的文章插入图片：</h2><p>需要两步：</p>
+<ul>
+<li>修改博客配置</li>
+<li>下载插件</li>
+</ul>
+<h3 id="①修改博客配置："><a href="#①修改博客配置：" class="headerlink" title="①修改博客配置："></a>①修改博客配置：</h3><p>在 <code>_config.yml</code> 中配置 <code>post_asset_folder</code> 为 <code>true</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true &#x2F;&#x2F; 原本为false</span><br></pre></td></tr></table></figure>
+<p>设置之后，每次通过 <code>hexo new</code> 新建文章后，就会产生一个同名的文件夹</p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo4.png" alt="hexo4"></p>
+<h3 id="②下载插件："><a href="#②下载插件：" class="headerlink" title="②下载插件："></a>②下载插件：</h3><p>在 <code>blog</code> 目录下使用 <code>git bash</code> 输入安装插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo5.png" alt="hexo5"></p>
+<p>等待下载完成之后就好了。</p>
+<p>当文章需要添加图片时，将需要添加的图片放入同名的文件夹中，同时通过相对路径索引到该图片，比如：</p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo5.png" alt="hexo5"> </p>
+<p>这个图片源码为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![标题](使用Hexo博客遇到的问题&#x2F;hexo4.png)</span><br></pre></td></tr></table></figure>
+
+<p>然后再上传，你就会发现可以正确的显示了。</p>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-使用Hexo框架搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,6 +398,10 @@
 <p>其中第一次使用的时候，它会提示你输入用户名和密码，这时候你就按照要求输入github的用户名和密码就ok了。</p>
 <h3 id="4-查看"><a href="#4-查看" class="headerlink" title="4. 查看"></a>4. 查看</h3><p>提交完成之后，就可以直接使用：你的用户名.github.io 登录你的博客了，快去看看吧！</p>
 <p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo6.png" alt="hexo6"></p>
+<h3 id="5-新建文章"><a href="#5-新建文章" class="headerlink" title="5. 新建文章"></a>5. 新建文章</h3><p>打开 <code>blog</code> 文件夹使用 <code>Git Bash Here</code> 命令行，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;文章名称&quot;</span><br></pre></td></tr></table></figure>
+<p>这样一篇新的文章就创建好了，我一般使用的 <code>vs code</code> 进行编辑。</p>
+<p>按照路径打开文件，所有的文章都在这个路径下 <code>blog/source/_posts</code> 找到后使用 <code>vs code</code> 打开就可以开始编辑了。</p>
 <hr>
 
       
@@ -274,11 +409,6 @@
       
     </div>
     <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
       
       
@@ -448,11 +578,6 @@
       
     </div>
     <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
       
       
