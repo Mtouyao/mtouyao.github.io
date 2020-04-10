@@ -185,7 +185,7 @@
 <p>后来看了一篇文章：<a href="https://blog.csdn.net/Greenovia/article/details/60576985" target="_blank" rel="noopener">解决用Hexo和GitHub搭建博客时hexo d命令报错问题</a></p>
 <p>发现是 <code>_config.yml</code> 中的git仓库链接设置的是 <code>ssh</code> 链接，而我没用给git账户增加 <code>ssh key</code> 才造成的问题。</p>
 <h3 id="有两种解决方法："><a href="#有两种解决方法：" class="headerlink" title="有两种解决方法："></a>有两种解决方法：</h3><h3 id="①第一种（也是我使用的一种）："><a href="#①第一种（也是我使用的一种）：" class="headerlink" title="①第一种（也是我使用的一种）："></a>①第一种（也是我使用的一种）：</h3><p>改为https协议</p>
-<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%5Chexo1.png" alt="heox1"></p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo1.png" alt="heox1"></p>
 <p>复制之后在 <code>_config.yml</code> 文件中修改 <code>deploy</code> ：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: https:&#x2F;&#x2F;github.com&#x2F;Mtouyao&#x2F;mtouyao.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
 
@@ -200,10 +200,10 @@
 <p>这里注意，<code>repo</code> 中填写的是SSH协议的链接。</p>
 <p>改完之后打开电脑中的 <code>id_rsa.pub</code> 文件将公钥复制下来，路径是：<code>C/Users/Administrator/.ssh/id_rsa</code></p>
 <p>进入你的githab账户设置，在 <code>ssh and GPG keys</code> 中点击 <code>New SSH key</code> ：</p>
-<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%5Chexo2.png" alt="hexo2"></p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo2.png" alt="hexo2"></p>
 <p>我这里空的是因为我使用的是 <code>https</code> 协议，所以没有设置 <code>ssh</code> 公钥。</p>
 <p>把刚刚复制下来的公钥粘贴到key中，<code>title</code> 随便你怎么写：</p>
-<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%5Chexo3.png" alt="hexo3"></p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo3.png" alt="hexo3"></p>
 <p>接下来检查一下 ssh key 是否正确，在git bash中输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
@@ -235,15 +235,15 @@
 <h3 id="①修改博客配置："><a href="#①修改博客配置：" class="headerlink" title="①修改博客配置："></a>①修改博客配置：</h3><p>在 <code>_config.yml</code> 中配置 <code>post_asset_folder</code> 为 <code>true</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true &#x2F;&#x2F; 原本为false</span><br></pre></td></tr></table></figure>
 <p>设置之后，每次通过 <code>hexo new</code> 新建文章后，就会产生一个同名的文件夹</p>
-<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%5Chexo4.png" alt="hexo4"></p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo4.png" alt="hexo4"></p>
 <h3 id="②下载插件："><a href="#②下载插件：" class="headerlink" title="②下载插件："></a>②下载插件：</h3><p>在 <code>blog</code> 目录下使用 <code>git bash</code> 输入安装插件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%5Chexo5.png" alt="hexo5"></p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo5.png" alt="hexo5"></p>
 <p>等待下载完成之后就好了。</p>
 <p>当文章需要添加图片时，将需要添加的图片放入同名的文件夹中，同时通过相对路径索引到该图片，比如：</p>
-<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%5Chexo5.png" alt="hexo5"> </p>
+<p><img src="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/hexo5.png" alt="hexo5"> </p>
 <p>这个图片源码为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![标题](使用Hexo博客遇到的问题\hexo4.png)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![标题](使用Hexo博客遇到的问题&#x2F;hexo4.png)</span><br></pre></td></tr></table></figure>
 
 <p>然后再上传，你就会发现可以正确的显示了。</p>
 <hr>
@@ -316,14 +316,14 @@
 <ul>
 <li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs下载地址</a> </li>
 </ul>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs1.png" alt="nodejs1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs1.png" alt="nodejs1"></p>
 <ol start="2">
 <li>官网点击下载 git（windows系统需要使用）</li>
 </ol>
 <ul>
 <li><a href="https://git-scm.com/" target="_blank" rel="noopener">git下载地址</a> </li>
 </ul>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit1.png" alt="git1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git1.png" alt="git1"></p>
 <ol start="3">
 <li>注册 github 账号</li>
 </ol>
@@ -337,29 +337,29 @@
 <p>首先要检查nodejs有没有安装成功：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v &#x2F;&#x2F; 返回版本号</span><br><span class="line">$ npm -v &#x2F;&#x2F; 返回版本号</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs2.png" alt="git1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs2.png" alt="git1"></p>
 <p>然后安装淘宝的镜像源，因为本地的网络下载或者部署会很慢（如果错误就重来，可能是连接不稳定，多尝试几次就好了），命令行输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <p>再检查：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm &#x2F;&#x2F; 返回信息</span><br><span class="line">$ cnpm-v &#x2F;&#x2F; 返回版本号</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs3.png" alt="git1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs3.png" alt="git1"></p>
 <p>成功后就可以开始安装 hexo了。</p>
 <p>在命令行中输入安装hexo的命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit2.png" alt="git2"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git2.png" alt="git2"></p>
 <p>回车后就不用管它了，这时候它就会自己下载。下载成功之后会自动刷新下一个命令行。（下载失败也别害怕，再重新输入一遍）</p>
 <p>然后查看版本：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit3.png" alt="git3"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git3.png" alt="git3"></p>
 <p>以上都做完了之后，我们开始初始化：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
 
 <p>输入之后我们可以在文件夹中看到以下文件：</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo1.png" alt="hexo1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo1.png" alt="hexo1"></p>
 <ul>
 <li>其中 _config.yml 是非常重要的文件，用它来配置整个博客</li>
 </ul>
@@ -371,7 +371,7 @@
 <h3 id="2-使用github作为桥接"><a href="#2-使用github作为桥接" class="headerlink" title="2. 使用github作为桥接"></a>2. 使用github作为桥接</h3><p>登录 <a href="https://github.com/" target="_blank" rel="noopener">github</a> ，点击 New repository，新建仓库。</p>
 <p>创建仓库名称一定要按照格式：你的用户名.github.io</p>
 <p>比如我的用户名是mtouyao，那么我的仓库名就是：mtouyao.github.io</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo2.png" alt="hexo2"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo2.png" alt="hexo2"></p>
 <p>只有这样部署github page的时候才会被识别。</p>
 <p>创建完成之后我们回到 <code>git bash here</code> 中（切记要在blog文件或者说是在你init之后的文件中打开）</p>
 <p>要在目录下安装一个 hexo 部署插件，在命令行中输入：</p>
@@ -379,12 +379,12 @@
 
 <p>等待安装成功后打开 <code>_config.yml</code> 文件，你可以用记事本，但我这里用 VS code 打开。</p>
 <p>打开之后找到这几行代码，不出意外一般都是在最后。</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo3.png" alt="hexo3"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo3.png" alt="hexo3"></p>
 <p>把它们改为：</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo4.png" alt="hexo4"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo4.png" alt="hexo4"></p>
 <p>其中我们注意到 <code>repo</code> 和 <code>branch</code> 原本是没有的，把他们加上去，要注意使用英文输入，<code>repo</code> 中填写的是你在github中创建的仓库的地址， <code>branch</code> 中填写 <code>master</code> 就行了。</p>
 <p>复制github地址的地方：</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo5.png" alt="hexo5"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo5.png" alt="hexo5"></p>
 <p>保存就完成了！</p>
 <h3 id="3-部署到github中"><a href="#3-部署到github中" class="headerlink" title="3. 部署到github中"></a>3. 部署到github中</h3><p>打开命令行，输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &#x2F;&#x2F; 清理</span><br></pre></td></tr></table></figure>
@@ -397,7 +397,7 @@
 
 <p>其中第一次使用的时候，它会提示你输入用户名和密码，这时候你就按照要求输入github的用户名和密码就ok了。</p>
 <h3 id="4-查看"><a href="#4-查看" class="headerlink" title="4. 查看"></a>4. 查看</h3><p>提交完成之后，就可以直接使用：你的用户名.github.io 登录你的博客了，快去看看吧！</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo6.png" alt="hexo6"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo6.png" alt="hexo6"></p>
 <h3 id="5-新建文章"><a href="#5-新建文章" class="headerlink" title="5. 新建文章"></a>5. 新建文章</h3><p>打开 <code>blog</code> 文件夹使用 <code>Git Bash Here</code> 命令行，输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;文章名称&quot;</span><br></pre></td></tr></table></figure>
 <p>这样一篇新的文章就创建好了，我一般使用的 <code>vs code</code> 进行编辑。</p>
@@ -407,15 +407,15 @@
 <p>1、 找到要更换主题的github仓库</p>
 <p>yilia 主题地址：<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">传送门</a></p>
 <p>2、 复制地址：</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia1.png" alt="yilia1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/yilia1.png" alt="yilia1"></p>
 <p>3、 使用git克隆仓库到本地：</p>
 <p>这里要注意，要克隆在 .\blog\themes 路径下:</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia2.png" alt="yilia2"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/yilia2.png" alt="yilia2"></p>
 <p>等待下载完成。</p>
 <p>检查一下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd theme&#x2F;</span><br><span class="line">$ ls -l</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia3.png" alt="yilia3"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/yilia3.png" alt="yilia3"></p>
 <p>1：跳转到 themes 目录下</p>
 <p>2：当前所在的目录，已经到 themes 目录下</p>
 <p>3：查看当前目录下的文件</p>
@@ -425,7 +425,7 @@
 <p>下载完成之后打开 <code>_config.yml</code> 文件，修改 <code>theme</code> 后面的代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 默认的主题</span><br><span class="line">theme: landscape</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 修改过后</span><br><span class="line">theme: hexo-theme-yilia</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia4.png" alt="yilia4"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/yilia4.png" alt="yilia4"></p>
 <p>修改完成保存退出。</p>
 <p>5、 部署：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &#x2F;&#x2F; 清理</span><br><span class="line">$ hexo g &#x2F;&#x2F; 生成静态文件</span><br><span class="line">$ hexo d &#x2F;&#x2F; 部署</span><br></pre></td></tr></table></figure>
@@ -572,28 +572,28 @@
         <h2 id="准备工具：下载git和注册gitee"><a href="#准备工具：下载git和注册gitee" class="headerlink" title="准备工具：下载git和注册gitee"></a>准备工具：下载git和注册gitee</h2><h2 id="下载git："><a href="#下载git：" class="headerlink" title="下载git："></a>下载git：</h2><p>登录git官网下载：<br><a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a> 登录官网点击下载。</p>
 <h2 id="注册gitee："><a href="#注册gitee：" class="headerlink" title="注册gitee："></a>注册gitee：</h2><p>登录gitee官网注册：<br><a href="https://gitee.com/" target="_blank" rel="noopener">gitee官网</a> 注册完成之后登录创建新的仓库。</p>
 <h2 id="导入仓库"><a href="#导入仓库" class="headerlink" title="导入仓库:"></a>导入仓库:</h2><p>1.到本地项目文件夹邮件选择 <code>Git Bash Here</code></p>
-<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD%5Cgit1.png" alt="使用git1"></p>
+<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/git1.png" alt="使用git1"></p>
 <p>2.使用命令行输入个人信息：</p>
 <p>$ git config –global user.name “xxxxx”</p>
 <p>$ git config –global user.email “<a href="mailto:xxxxxx@hotmail.com">xxxxxx@hotmail.com</a>“</p>
-<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD%5Cgit2.png" alt="使用git2"></p>
+<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/git2.png" alt="使用git2"></p>
 <p>3.在本地目录创建本地仓库：</p>
 <p>$ git init</p>
 <p>输入命令后项目目录会有一个隐藏的 <code>.git</code> 文件夹</p>
-<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD%5Cgit3.png" alt="使用git3"></p>
+<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/git3.png" alt="使用git3"></p>
 <p>4.添加文件加下的所有文件到本地仓库：</p>
 <p>$ git add . (注意：add后面一个空格然后再加一个点)</p>
-<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD%5Cgit4.png" alt="使用git4"></p>
+<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/git4.png" alt="使用git4"></p>
 <p>之后你会发现多了一个叫 README.md 的文件</p>
 <p>5.第一次提交</p>
 <p>$ git commit -m “注释”</p>
 <p>git commit -m的作用为提交暂存区的文件，后面的双引号就是本次提交的信息可以随便写。</p>
 <p>6.添加远程仓库</p>
 <p>首先要找到你再gitee中创建的新的仓库，并复制https地址。</p>
-<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD%5Ccopy1.png" alt="复制地址1"></p>
+<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/copy1.png" alt="复制地址1"></p>
 <p>再使用进行添加地址：</p>
 <p>$ git remote add origin https://仓库地址</p>
-<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD%5Ccopy2.png" alt="复制地址2"></p>
+<p><img src="/2020/04/07/%E4%BD%BF%E7%94%A8git%E6%8A%8A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0gitee%E4%B8%AD/copy2.png" alt="复制地址2"></p>
 <p>7.拉取远程仓库</p>
 <p>$ git pull –rebase origin master</p>
 <p>将远程仓库的内容合并到本地仓库，如果远程仓库为空可以跳过这一步，如果远程仓库不为空，则必须进行这一步，否则会报错。</p>
