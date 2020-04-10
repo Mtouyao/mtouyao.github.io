@@ -15,23 +15,27 @@
 <meta property="og:site_name" content="银垚的博客">
 <meta property="og:description" content="前言：Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。在这里主要针对windows用户使用github作为桥接搭建hexo博客。 准备工具： 官网下载 nodejs 并安装   nodejs下载地址     官网点击下载 git（windows系统需要使用）   git下载地址     注册 git">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs1.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git1.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs2.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs3.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git2.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git3.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo1.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo2.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo3.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo4.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo5.png">
-<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo6.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs1.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit1.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs2.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs3.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit2.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit3.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo1.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo2.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo3.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo4.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo5.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo6.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia1.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia2.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia3.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia4.png">
 <meta property="article:published_time" content="2020-04-08T05:09:46.000Z">
-<meta property="article:modified_time" content="2020-04-09T06:14:17.519Z">
+<meta property="article:modified_time" content="2020-04-10T09:41:37.393Z">
 <meta property="article:author" content="顾银垚">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs1.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs1.png">
   
     <link rel="alternative" href="/atom.xml" title="银垚的博客" type="application/atom+xml">
   
@@ -198,14 +202,14 @@
 <ul>
 <li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs下载地址</a> </li>
 </ul>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs1.png" alt="nodejs1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs1.png" alt="nodejs1"></p>
 <ol start="2">
 <li>官网点击下载 git（windows系统需要使用）</li>
 </ol>
 <ul>
 <li><a href="https://git-scm.com/" target="_blank" rel="noopener">git下载地址</a> </li>
 </ul>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git1.png" alt="git1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit1.png" alt="git1"></p>
 <ol start="3">
 <li>注册 github 账号</li>
 </ol>
@@ -217,31 +221,31 @@
 <h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><h3 id="1-安装-Hexo-框架"><a href="#1-安装-Hexo-框架" class="headerlink" title="1. 安装 Hexo 框架"></a>1. 安装 Hexo 框架</h3><p>首先打开一个空白的文件夹，这个文件夹是用来存放所有blog的东西，所以必须选则你认为合适的地方。（这个文件夹可以直接命名为blog）</p>
 <p>右键文件夹空白的地方，打开 <code>Git Bash Here</code> 。</p>
 <p>首先要检查nodejs有没有安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v （返回版本号）</span><br><span class="line">$ npm -v （返回版本号）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v &#x2F;&#x2F; 返回版本号</span><br><span class="line">$ npm -v &#x2F;&#x2F; 返回版本号</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs2.png" alt="git1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs2.png" alt="git1"></p>
 <p>然后安装淘宝的镜像源，因为本地的网络下载或者部署会很慢（如果错误就重来，可能是连接不稳定，多尝试几次就好了），命令行输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <p>再检查：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm （返回信息）</span><br><span class="line">$ cnpm-v （返回版本号）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm &#x2F;&#x2F; 返回信息</span><br><span class="line">$ cnpm-v &#x2F;&#x2F; 返回版本号</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/nodejs3.png" alt="git1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cnodejs3.png" alt="git1"></p>
 <p>成功后就可以开始安装 hexo了。</p>
 <p>在命令行中输入安装hexo的命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git2.png" alt="git2"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit2.png" alt="git2"></p>
 <p>回车后就不用管它了，这时候它就会自己下载。下载成功之后会自动刷新下一个命令行。（下载失败也别害怕，再重新输入一遍）</p>
 <p>然后查看版本：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/git3.png" alt="git3"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cgit3.png" alt="git3"></p>
 <p>以上都做完了之后，我们开始初始化：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
 
 <p>输入之后我们可以在文件夹中看到以下文件：</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo1.png" alt="hexo1"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo1.png" alt="hexo1"></p>
 <ul>
 <li>其中 _config.yml 是非常重要的文件，用它来配置整个博客</li>
 </ul>
@@ -253,7 +257,7 @@
 <h3 id="2-使用github作为桥接"><a href="#2-使用github作为桥接" class="headerlink" title="2. 使用github作为桥接"></a>2. 使用github作为桥接</h3><p>登录 <a href="https://github.com/" target="_blank" rel="noopener">github</a> ，点击 New repository，新建仓库。</p>
 <p>创建仓库名称一定要按照格式：你的用户名.github.io</p>
 <p>比如我的用户名是mtouyao，那么我的仓库名就是：mtouyao.github.io</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo2.png" alt="hexo2"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo2.png" alt="hexo2"></p>
 <p>只有这样部署github page的时候才会被识别。</p>
 <p>创建完成之后我们回到 <code>git bash here</code> 中（切记要在blog文件或者说是在你init之后的文件中打开）</p>
 <p>要在目录下安装一个 hexo 部署插件，在命令行中输入：</p>
@@ -261,30 +265,59 @@
 
 <p>等待安装成功后打开 <code>_config.yml</code> 文件，你可以用记事本，但我这里用 VS code 打开。</p>
 <p>打开之后找到这几行代码，不出意外一般都是在最后。</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo3.png" alt="hexo3"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo3.png" alt="hexo3"></p>
 <p>把它们改为：</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo4.png" alt="hexo4"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo4.png" alt="hexo4"></p>
 <p>其中我们注意到 <code>repo</code> 和 <code>branch</code> 原本是没有的，把他们加上去，要注意使用英文输入，<code>repo</code> 中填写的是你在github中创建的仓库的地址， <code>branch</code> 中填写 <code>master</code> 就行了。</p>
 <p>复制github地址的地方：</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo5.png" alt="hexo5"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo5.png" alt="hexo5"></p>
 <p>保存就完成了！</p>
 <h3 id="3-部署到github中"><a href="#3-部署到github中" class="headerlink" title="3. 部署到github中"></a>3. 部署到github中</h3><p>打开命令行，输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean (清除缓存)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &#x2F;&#x2F; 清理</span><br></pre></td></tr></table></figure>
 
 <p>然后输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g (部署提交)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g &#x2F;&#x2F; 生成静态文件</span><br></pre></td></tr></table></figure>
 
 <p>最后：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d (提交到github中)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d &#x2F;&#x2F; 部署</span><br></pre></td></tr></table></figure>
 
 <p>其中第一次使用的时候，它会提示你输入用户名和密码，这时候你就按照要求输入github的用户名和密码就ok了。</p>
 <h3 id="4-查看"><a href="#4-查看" class="headerlink" title="4. 查看"></a>4. 查看</h3><p>提交完成之后，就可以直接使用：你的用户名.github.io 登录你的博客了，快去看看吧！</p>
-<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/hexo6.png" alt="hexo6"></p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Chexo6.png" alt="hexo6"></p>
 <h3 id="5-新建文章"><a href="#5-新建文章" class="headerlink" title="5. 新建文章"></a>5. 新建文章</h3><p>打开 <code>blog</code> 文件夹使用 <code>Git Bash Here</code> 命令行，输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;文章名称&quot;</span><br></pre></td></tr></table></figure>
 <p>这样一篇新的文章就创建好了，我一般使用的 <code>vs code</code> 进行编辑。</p>
 <p>按照路径打开文件，所有的文章都在这个路径下 <code>blog/source/_posts</code> 找到后使用 <code>vs code</code> 打开就可以开始编辑了。</p>
 <hr>
+<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>这里将示范 yilia 主题的更换，仅供参考，其他主题的更换方法和这个一样。</p>
+<p>1、 找到要更换主题的github仓库</p>
+<p>yilia 主题地址：<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">传送门</a></p>
+<p>2、 复制地址：</p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia1.png" alt="yilia1"></p>
+<p>3、 使用git克隆仓库到本地：</p>
+<p>这里要注意，要克隆在 .\blog\themes 路径下:</p>
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia2.png" alt="yilia2"></p>
+<p>等待下载完成。</p>
+<p>检查一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd theme&#x2F;</span><br><span class="line">$ ls -l</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia3.png" alt="yilia3"></p>
+<p>1：跳转到 themes 目录下</p>
+<p>2：当前所在的目录，已经到 themes 目录下</p>
+<p>3：查看当前目录下的文件</p>
+<p>4：当前目录中的文件</p>
+<p>发现有 <code>hexo-thmem-yilia</code> 文件之后就可以开始下一步了。</p>
+<p>4、 修改主题：</p>
+<p>下载完成之后打开 <code>_config.yml</code> 文件，修改 <code>theme</code> 后面的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 默认的主题</span><br><span class="line">theme: landscape</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 修改过后</span><br><span class="line">theme: hexo-theme-yilia</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/04/08/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8Hexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%5Cyilia4.png" alt="yilia4"></p>
+<p>修改完成保存退出。</p>
+<p>5、 部署：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &#x2F;&#x2F; 清理</span><br><span class="line">$ hexo g &#x2F;&#x2F; 生成静态文件</span><br><span class="line">$ hexo d &#x2F;&#x2F; 部署</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以在你的博客中看到新的主题了。</p>
+<p>也可以在yilia主题路径下的 <code>_config.yml</code> 文件中添加自己的超链接图片什么的。</p>
 
       
 
