@@ -157,6 +157,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="w-Java中final关键字的作用" class="article article-type-w  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/18/Java%E4%B8%ADfinal%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8/">Java中final关键字的作用</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/18/Java%E4%B8%ADfinal%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-04-18T04:00:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、final-的基本用法"><a href="#一、final-的基本用法" class="headerlink" title="一、final 的基本用法"></a>一、<code>final</code> 的基本用法</h1><p><code>final</code> 关键字可以用于三个地方：修饰类、方法和变量（包括成员变量和局部变量）。</p>
+<hr>
+<h2 id="1-修饰类："><a href="#1-修饰类：" class="headerlink" title="1. 修饰类："></a>1. 修饰类：</h2><p>被 <code>final</code> 关键字修饰的类不能被继承， <code>final</code> 类中的成员变量可以根据需要设置为 <code>final</code> ，但是要注意 <code>final</code> 类中的所有成员方法都会被隐式的指定为 <code>final</code>方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pet</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Pet</span></span>&#123;&#125; <span class="comment">// 这个 Pet类 不能被 Cat类 继承</span></span><br></pre></td></tr></table></figure>
+<p>所以，在使用 <code>final</code> 修饰类的时候要谨慎选择，在这个类真的以后不会用来继承或者出于安全的考虑可以使用 <code>final</code> 来修饰，其他情况尽量不要将类设计为 <code>final</code> 来修饰。</p>
+<hr>
+<h2 id="2-修饰方法："><a href="#2-修饰方法：" class="headerlink" title="2.修饰方法："></a>2.修饰方法：</h2><p>被 <code>final</code> 关键字修饰的属方法不能被重写（覆盖）。</p>
+<p>下面这句话，是我在<a href="https://www.cnblogs.com/dolphin0520/p/3736238.html" target="_blank" rel="noopener">大牛博客</a>中看到的，也是出自《Java编程思想》中的一段话：</p>
+<p>“使用 <code>final</code> 方法的原因有两个：第一个原因是把方法锁定，以防任何继承类修改他的含义；第二个原因是效率。在早期的 Java 实现版本中，会将 <code>final</code> 方法转为内嵌调用，但是如果方法过于庞大，可能看不到内嵌调用带来的任何性能提升。在最近的Java版本中，不需要使用 <code>final</code> 方法进行这些优化了。”</p>
+<p>因此，如果只有在想 <code>明确禁止</code> 该方法在子类中被覆盖的情况下才，将方法设置为 <code>final</code>的。</p>
+<p>类中的 <code>private</code> 方法会隐式的被指定为 <code>final</code> 方法。</p>
+<hr>
+<h2 id="3-修饰变量："><a href="#3-修饰变量：" class="headerlink" title="3.修饰变量："></a>3.修饰变量：</h2><p>修饰变量是 <code>final</code> 用的最多的地方，被修饰的变量必须要赋初始值，而且是只能初始化一次。</p>
+<p>对于一个 <code>final</code> 变量，如果是基本数据类型的变量，则其数值一旦在初始化之后便不能更改；如果是引用类型的变量，则在对其初始化之后便不能再让其指向另一个对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> i = <span class="number">1</span>; <span class="comment">// 使用 final 限定变量 i</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pet</span><span class="params">()</span></span>&#123;</span><br><span class="line">        i = <span class="number">2</span>; <span class="comment">// 报错，因为 i 被 final 限定</span></span><br><span class="line">        <span class="keyword">final</span> Object o = <span class="keyword">new</span> Object(); <span class="comment">// 使用 final 限定 0 </span></span><br><span class="line">        o = <span class="keyword">new</span> Object(); <span class="comment">// 报错，因为 o 被 final 限定</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<!-- # 二、深入理解 `final` 关键字
+
+## 1. 类中的 `final` 变量和普通变量有什么区别？
+
+当用 `final` 作用与类的成员变量时，成员变量必须在定义时或者在构造器中进行初始化赋值，而且 `final` 变量一旦被初始化赋值之后，就不能再被赋值了。
+
+`final` 限定的对象与普通对象的区别：
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String a = <span class="string">"h2"</span>; <span class="comment">// 与 b、c 对比的变量</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">final</span> String b = <span class="string">"h"</span>; <span class="comment">// final 限定的变量</span></span><br><span class="line">        String c = <span class="string">"h"</span>; <span class="comment">// 没有被 final 限定的变量</span></span><br><span class="line"></span><br><span class="line">        String d = b + <span class="number">2</span>;</span><br><span class="line">        String e = c + <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println((a == d)); <span class="comment">// true</span></span><br><span class="line">        System.out.println((a == e)); <span class="comment">// false</span></span><br><span class="line">        System.out.println(d); <span class="comment">// h2</span></span><br><span class="line">        System.out.println(e); <span class="comment">// h2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里面就是 <code>final</code> 变量和普通变量的区别了，当 <code>final</code> 变量是基本数据类型以及 <code>String</code> 类型时，如果在编译期间能知道它的确切值，则编译器会把它当做编译期常量使用。</p>
+<p>也就是说在用到该 <code>final</code> 变量的地方，相当于直接访问的这个常量，不需要在运行时确定。</p>
+<p>因此在上面的一段代码中，由于变量 <code>b</code> 被 <code>final</code> 修饰，因此会被当做编译器常量，所以在使用到 <code>b</code> 的地方会直接将变量 <code>b</code> 替换为它的 <code>值</code>。而对于变量 <code>c</code> 的访问却需要在运行时通过链接来进行。</p>
+<p>不过要注意，只有在编译期间能确切知道 <code>final</code> 变量值的情况下，编译器才会进行这样的优化，比如下面的这段代码就不会进行优化：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String a = <span class="string">"h2"</span>; <span class="comment">// 与 c 对比的变量</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">final</span> String b = getH(); <span class="comment">// final 限定的变量</span></span><br><span class="line">        </span><br><span class="line">        String c = b + <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        System.out.println((a == c)); <span class="comment">// false</span></span><br><span class="line">        System.out.println(c); <span class="comment">// h2</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义一个方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getH</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"h"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果为 <code>false</code> 。</p>
+<hr>
+<h2 id="2-–-gt"><a href="#2-–-gt" class="headerlink" title="2.  –&gt;"></a>2.  –&gt;</h2>-->
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/18/Java%E4%B8%ADfinal%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java与JavaScript学习笔记汇总" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -888,6 +993,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
