@@ -6,14 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 笔记 | 银垚的博客</title>
+  <title>Java继承中 implements 与 extends 的区别 | 银垚的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="努力做好每一件事">
-<meta property="og:type" content="website">
-<meta property="og:title" content="银垚的博客">
-<meta property="og:url" content="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/index.html">
+  <meta name="description" content="简言：  在类的声明中，通过 extends 来创建一个类的子类，一个类通过关键字 implements 来声明自己使用一个或多个接口。  extends 是继承某个抽象类，继承之后可以使用父类的方法，也可以重写父类的方法。  implements 是实现多个接口，接口的方法一般为空的，必须重写才能使用。       extens 是继承父类，只要被定义的那个类不是声明为 final 或者定义为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java继承中 implements 与 extends 的区别">
+<meta property="og:url" content="http://yoursite.com/2020/04/20/Java%E7%BB%A7%E6%89%BF%20implements%20%E4%B8%8E%20extends%20%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="银垚的博客">
-<meta property="og:description" content="努力做好每一件事">
+<meta property="og:description" content="简言：  在类的声明中，通过 extends 来创建一个类的子类，一个类通过关键字 implements 来声明自己使用一个或多个接口。  extends 是继承某个抽象类，继承之后可以使用父类的方法，也可以重写父类的方法。  implements 是实现多个接口，接口的方法一般为空的，必须重写才能使用。       extens 是继承父类，只要被定义的那个类不是声明为 final 或者定义为">
+<meta property="article:published_time" content="2020-04-20T05:34:25.000Z">
+<meta property="article:modified_time" content="2020-04-20T10:41:54.184Z">
 <meta property="article:author" content="顾银垚">
 <meta name="twitter:card" content="summary">
   
@@ -155,98 +157,254 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java继承 implements 与 extends 的区别" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/11/Java%E4%B8%8EJavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%B1%87%E6%80%BB/" class="archive-article-date">
-  	<time datetime="2020-04-11T12:37:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/11/Java%E4%B8%8EJavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%B1%87%E6%80%BB/">Java与JavaScript学习笔记汇总</a>
+    <h1 class="article-title" itemprop="name">
+      Java继承中 implements 与 extends 的区别
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-04-09T06:03:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+        
+        <a href="/2020/04/20/Java%E7%BB%A7%E6%89%BF%20implements%20%E4%B8%8E%20extends%20%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2020-04-20T05:34:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
 </a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简言："><a href="#简言：" class="headerlink" title="简言："></a>简言：</h2><ul>
+<li><ul>
+<li><p>在类的声明中，通过 <code>extends</code> 来创建一个类的子类，一个类通过关键字 <code>implements</code> 来声明自己使用一个或多个接口。</p>
+</li>
+<li><p><code>extends</code> 是继承某个抽象类，继承之后可以使用父类的方法，也可以重写父类的方法。</p>
+</li>
+<li><p><code>implements</code> 是实现多个接口，接口的方法一般为空的，必须重写才能使用。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ul>
+<li><code>extens</code> 是继承父类，只要被定义的那个类不是声明为 <code>final</code> 或者定义为 <code>abstract</code> 的就能继承，Java 中不支持多重继承，但是可以用接口来实现，这样就要用到 <code>implements</code>，继承只能继承一个类，但 <code>implements</code> 可以实现多个接口（多重实现），用逗号分隔开就行了。</li>
+</ul>
+</li>
+</ul>
+<p>比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">B</span> <span class="keyword">implements</span> <span class="title">C</span>,<span class="title">D</span>,<span class="title">E</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：<ul>
+<li>接口可以被多重实现（implements），抽象类只能被单一继承（extends）。</li>
+<li>接口只有定义，抽象类可以定义和实现。</li>
+<li>接口的字段定义默认为： <code>public static final</code>，抽象类字段默认是：<code>friendly</code> （包访问权）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="举例说明："><a href="#举例说明：" class="headerlink" title="举例说明："></a>举例说明：</h2><p>定义两个接口，Cat、Milk（implements）单一实现：</p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义 Cat 接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Cat</span></span>&#123;</span><br><span class="line">    <span class="comment">// 定义一个方法（但接口中没有具体的实现方法体）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eatFash</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Cat 接口实现类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CatImpl</span>/*<span class="title">Impl</span>--&gt;实现类、接口实现*/ <span class="keyword">implements</span> <span class="title">Cat</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eatFash</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// 实现 Cat 接口类中的 eatFash 方法</span></span><br><span class="line">        System.out.println(<span class="string">"吃鱼。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义牛奶接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Milk</span></span>&#123;</span><br><span class="line">    <span class="comment">// 定义喝牛奶方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drinkMilk</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Milk 接口的实现类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MilkImpl</span> <span class="keyword">implements</span> <span class="title">Milk</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drinkMilk</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// 实现 Milk 接口类中的 drinkMilk 方法</span></span><br><span class="line">        System.out.println(<span class="string">"喝牛奶。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>多重实现：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mian</span> <span class="keyword">implements</span> <span class="title">Cat</span>,<span class="title">Milk</span></span>&#123;</span><br><span class="line">    <span class="comment">// 实现 Cat 接口中 eatFash 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eatFash</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"吃鱼。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实现 Milk 接口中 drinkMilk 方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drinkMilk</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"喝牛奶。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>↑↑↑↑↑↑这就是接口的多重实现↑↑↑↑↑↑</p>
+<hr>
+<h2 id="接口的作用："><a href="#接口的作用：" class="headerlink" title="接口的作用："></a>接口的作用：</h2><p>接口是软件编程的规范，可以降低<a href="https://baike.baidu.com/item/%E8%80%A6%E5%90%88%E6%80%A7/4297612?fr=aladdin" target="_blank" rel="noopener">耦合性</a>，可以让某个模块或功能能够重复利用，这样只要写一次代码可以多次使用这个功能（方法）。其他地方要用到，直接接口调用来实现。</p>
+<hr>
+<h2 id="接口的优势："><a href="#接口的优势：" class="headerlink" title="接口的优势："></a>接口的优势：</h2><ol>
+<li>“接口+实现” 最常见的优势就是实现类和接口分离，在更换实现类的时候，不用更换接口功能。</li>
+<li>这对于做单元测试很有帮助。</li>
+</ol>
+<hr>
+<h2 id="继承："><a href="#继承：" class="headerlink" title="继承："></a>继承：</h2><p><code>extends</code> 关键字，表示对父类的继承，可以实现父类，也可以调用父类出始化。而且会覆盖父类定义的变量或者函数。在 Java 中，类的继承是单一继承，一个子类只能拥有一个父类，所以 <code>extends</code> 只能继承一个类。</p>
+<p>继承的语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义父类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 父类</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类继承父类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 子类 <span class="keyword">extends</span> 父类</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="举例说明为什么使用继承："><a href="#举例说明为什么使用继承：" class="headerlink" title="举例说明为什么使用继承："></a>举例说明为什么使用继承：</h2><p>比如我们要开发宠物类，其中宠物分别为猫、狗：</p>
+<p>要实现的属性和方法：</p>
+<p>猫：属性（名字，品种），方法（吃，玩，介绍）</p>
+<p>狗：属性（名字，品种），方法（吃，玩，介绍）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 猫类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String kind;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String name,String kind)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.kind = kind;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 吃</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123; </span><br><span class="line">        System.out.println(name+<span class="string">"正在吃。"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 玩</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name+<span class="string">"正在玩。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 介绍</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">introduce</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"我是："</span>+name+<span class="string">"。"</span>);</span><br><span class="line">        System.out.println(<span class="string">"种类是："</span> +kind+<span class="string">"。"</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 狗类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String kind;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(String name,String kind)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.kind = kind;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 吃</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123; </span><br><span class="line">        System.out.println(name+<span class="string">"正在吃。"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 玩</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name+<span class="string">"正在玩。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 介绍</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">introduce</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"我是："</span>+name+<span class="string">"。"</span>);</span><br><span class="line">        System.out.println(<span class="string">"种类是："</span> +kind+<span class="string">"。"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这两段代码，除了类名不同，其他的大体相同。造成代码量大且臃肿，而且维护性不高。</p>
+<p>我们就可以定义一个父类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 宠物类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String kind;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pet</span><span class="params">(String name,String kind)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.kind = kind;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 吃</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123; </span><br><span class="line">        System.out.println(name+<span class="string">"正在吃。"</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 玩</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name+<span class="string">"正在玩。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 介绍</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">introduce</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        System.out.println(<span class="string">"我是："</span>+name+<span class="string">"。"</span>);</span><br><span class="line">        System.out.println(<span class="string">"种类是："</span> +kind+<span class="string">"。"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Pet类作为父类，其他的类来继承这个类之后就具有父类当中的属性和方法，子类就不会存在重复的代码，维护性也提高，代码也更加简洁，提高代码的复用性（复用性主要是可以多次使用，不用再多次写同样的代码）。</p>
+<p>继承之后的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 猫类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String name,String kind)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name,kind);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 狗类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dog</span><span class="params">(String name,String kind)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(name,kind);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样代码就很简洁了。</p>
+<hr>
+<h2 id="super的用法："><a href="#super的用法：" class="headerlink" title="super的用法："></a>super的用法：</h2><p><code>super</code> 在继承关系中，父类的成员变量、局部变量、方法被隐藏被子类常常覆盖，这时需要引用父类成员变量、局部变量、方法。</p>
+<p>语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">super</span>.变量名;</span><br><span class="line"><span class="keyword">super</span>.方法名;</span><br><span class="line"><span class="keyword">super</span>.父类的构造方法;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="this的用法："><a href="#this的用法：" class="headerlink" title="this的用法："></a>this的用法：</h2><p>如果类的成员变量与局部变量重名，类的成员变量将被隐藏，如果要使用类的成员变量，需要使用 <code>this</code> 引用。</p>
+<p>语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.变量名;</span><br><span class="line"><span class="keyword">this</span>.方法名;</span><br><span class="line"><span class="keyword">this</span>.父类的构造方法;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性:"></a>继承的特性:</h2><ol>
+<li><p>子类拥有父类非private的属性，方法。</p>
+</li>
+<li><p>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。</p>
+</li>
+<li><p>子类可以用自己的方式实现父类的方法。</p>
+<ul>
+<li>Java的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如A类继承B类，B类继承C类，所以按照关系就是C类是B类的父类，B类是A类的父类。</li>
+</ul>
+</li>
+<li><p>提高了类之间的<a href="https://baike.baidu.com/item/%E8%80%A6%E5%90%88%E6%80%A7/4297612?fr=aladdin" target="_blank" rel="noopener">耦合性</a>（继承的缺点，耦合度高就会造成代码之间的联系）。</p>
+</li>
+</ol>
+<hr>
+<p>本文章参考了 <a href="https://blog.csdn.net/weixin_39938767/article/details/80056922" target="_blank" rel="noopener">Happy.哆啦梦</a> 的文章。</p>
+<hr>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/09/%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">使用Hexo博客遇到的问题</a>
-    </h1>
-  
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/20/Java%E7%BB%A7%E6%89%BF%20implements%20%E4%B8%8E%20extends%20%E7%9A%84%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/04/18/Java%E4%B8%ADfinal%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中final关键字的作用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -269,9 +427,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
